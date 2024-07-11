@@ -6,9 +6,13 @@ class Stack {
     }
 
     set push(value){
-        this.stack.push(value);
-        this.top = this.stack.length - 1;
-        console.log(`Element added ${value}`)
+        if(this.capacity -1 == this.top){
+            console.log(`You are reached maximum size of stack`)
+        }else{
+            this.stack.push(value);
+            this.top = this.stack.length - 1;
+            console.log(`Element added ${value}`)
+        }
     }
 
     get pop(){
